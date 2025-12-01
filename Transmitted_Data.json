@@ -1,0 +1,13 @@
+{
+  "enc_aes_key": "Uf+rKUevOUdyFhysd9M0dfSK3RC+RpAdLXDnUZD8OJAKDAj0zcqsZr5nOobZUmf/+x4o49xASjXCkrY86mrTy55MNZjg1M5xwW1OmUvPij6U662LM9jLwhL6bY5jTy46DU1jmDwZx5mcqY9r9y1D84hUd3D99GgkWX214pxmPmfQVwBusCqtLR+SUCEMnxzcHDeGJwAPdFit9MAyJn7Klove+RfrsY1EiZzYthe5YfAb7fEAKoxSh8dhbQewv2kCngyKOUoAFk/KMEOpT7v4X+7fmwfn2XBBCcYLg0+fBhlrX/uJYzcUrnkM4C6t1Q1f2sNs/rTrbgB7btXfzh80VQ==",
+  "iv": "p+phJIWDUfQun1HaaQTAiw==",
+  "ciphertext": "qwg42iljpZ64eV3jsf1UwQ==",
+  "mac": "Tna11N1Pi3YMbajj0KCHgbRmogEH8XNj9EOO+mLk9oE=",
+  "meta": {
+    "rsa": "RSA-2048-OAEP-SHA256",
+    "aes": "AES-256-CBC-256bit",
+    "mac": "HMAC-SHA256",
+    "padding": "PKCS7",
+    "note": "Encrypt-then-MAC over iv||ciphertext"
+  }
+}
