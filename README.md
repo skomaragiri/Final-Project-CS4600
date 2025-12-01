@@ -92,3 +92,45 @@ secure_comm/
   bob_public.pem
   README.md
 
+## How to Run
+
+### 1. Generate RSA Keys
+Run the key generation script to create RSA key pairs for both Alice and Bob:
+
+```bash
+python gen_keys.py
+```
+
+This produces:
+- alice_private.pem
+- alice_public.pem
+- bob_private.pem
+- bob_public.pem
+
+### 2. Prepare the Message
+Edit or replace the plaintext file:
+
+```bash
+echo "Hello world" > message.txt
+```
+
+This is the file that will be encrypted and sent.
+
+### 3. Run the Sender
+Execute the sender script:
+
+```bash
+python sender.py
+```
+This generates the simulated transmitted data file from the Transmitted_Data.json file.
+
+### 4. Run the Receiver
+Execute the receiver script:
+
+```bash
+python receiver.py
+```
+After successful MAC verification and decryption, the output plaintext is written to:
+```bash
+cat decrypted_message.txt
+```
