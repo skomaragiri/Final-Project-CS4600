@@ -64,3 +64,31 @@ Parties learn each other's public keys by reading the `.pem` files.
     "padding": "PKCS7"
   }
 }
+```
+
+## Receiver Workflow
+
+1. Read and parse `Transmitted_Data.json`.
+2. Base64-decode all fields (`enc_aes_key`, `iv`, `ciphertext`, `mac`).
+3. Decrypt the AES key using the receiver’s RSA private key (RSA-OAEP, SHA-256).
+4. Derive the MAC key using the same method as the sender.
+5. Recompute HMAC-SHA256 over `iv || ciphertext` and compare to the received MAC.
+   - If the MAC does not match, reject the message.
+6. Decrypt the ciphertext using AES-256-CBC.
+7. Remove PKCS7 padding from the decrypted data.
+8. Write the recovered plaintext to `decrypted_message.txt`.
+
+## File Structure
+secure_comm/
+  gen_keys.py
+  sender.py
+  receiver.py
+  message.txt
+  decrypted_message.txt
+  Transmitted_Data.json
+  alice_private.pem
+  alice_public.pem
+  bob_private.pem
+  bob_public.pem
+  README.md
+
