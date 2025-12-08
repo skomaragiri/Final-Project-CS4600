@@ -122,7 +122,7 @@ Execute the sender script:
 ```bash
 python sender.py
 ```
-This generates the simulated transmitted data file from the Transmitted_Data.json file.
+This generates the simulated a .txt from transmitted data.
 
 ### 4. Run the Receiver
 Execute the receiver script:
