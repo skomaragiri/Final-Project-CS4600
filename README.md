@@ -49,7 +49,7 @@ Parties learn each other's public keys by reading the `.pem` files.
 5. Compute HMAC-SHA256 over `iv || ciphertext`
 6. Encrypt AES key using receiver’s RSA-2048-OAEP public key
 7. Base64-encode all binary fields
-8. Write the following JSON structure to **`Transmitted_Data.json`**:
+8. Write the following JSON structure to **`Transmitted_Data.txt`**:
 
 ```json
 {
@@ -68,7 +68,7 @@ Parties learn each other's public keys by reading the `.pem` files.
 
 ## Receiver Workflow
 
-1. Read and parse `Transmitted_Data.json`.
+1. Read and parse `Transmitted_Data.txt`.
 2. Base64-decode all fields (`enc_aes_key`, `iv`, `ciphertext`, `mac`).
 3. Decrypt the AES key using the receiver’s RSA private key (RSA-OAEP, SHA-256).
 4. Derive the MAC key using the same method as the sender.
@@ -85,7 +85,7 @@ secure_comm/
   receiver.py
   message.txt
   decrypted_message.txt
-  Transmitted_Data.json
+  Transmitted_Data.txt
   alice_private.pem
   alice_public.pem
   bob_private.pem
